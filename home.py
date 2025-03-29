@@ -16,7 +16,7 @@ st.title("🫀🫀🫀การพยากรณ์โรคหัวใจล�
 ##with c3 :
     ##st.write("")
 
-dt = pd.read_csv("./data/pollution.csv")
+dt = pd.read_csv("./data/pollution01.csv")
 st.header("🫀🫀🫀Data HeartDisease🫀🫀🫀")
 st.write(dt.head(10))
 st.subheader("สถิติโรคหัวใจ")
