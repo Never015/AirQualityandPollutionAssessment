@@ -4,9 +4,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.title("🫀🫀🫀การพยากรณ์โรคหัวใจล้มเหลวด้วยเทคนิคเหมืองข้อมูล🫀🫀🫀")
+st.title("☁️💨☁️การพยากรณ์ คุณภาพอากาศ และ มลพิษ☁️💨☁️")
 
-##st.image('./img/Heart-Disease.jpg')
+st.image('./img/air_pollution.jpg')
 ##st.subheader("🫀🫀🫀🫀HeartDisease🫀🫀🫀🫀🫀")
 ##c1,c2,c3=st.columns(3)
 ##with c1:
@@ -17,9 +17,10 @@ st.title("🫀🫀🫀การพยากรณ์โรคหัวใจล�
     ##st.write("")
 
 dt = pd.read_csv("./data/pollution01.csv")
-st.header("🫀🫀🫀Data HeartDisease🫀🫀🫀")
+X = dt.drop(columns=['AirQuality']) 
+st.header("☁️💨☁️Air Quality and Pollution ☁️💨☁️")
 st.write(dt.head(10))
-st.subheader("สถิติโรคหัวใจ")
+st.subheader("สถิติคุณภาพอากาศและมลพิษ")
 st.write(dt.describe())
 
 html_8 = """
@@ -30,31 +31,26 @@ html_8 = """
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-##A1 = st.number_input("กรุณาเลือกข้อมูล Age(อายุ)")
-##A2 = st.selectbox("กรุณาเลือก Sex(เพศ)ชาย=1 หญิง=0",[0,1])
-##A3 = st.selectbox("กรุณาเลือก ChestPainType ASY = 1 ATA =2 NAP = 3 TA = 4",[1,2,3,4])
-##A4 = st.number_input("กรุณาเลือกข้อมูล RestingBP 0 - 200")
-##A5 = st.number_input("กรุณาเลือกข้อมูล Cholesterol 0 - 603")
-##A6 = st.selectbox("กรุณาเลือก FastingBS ",[0,1])
-##A7 = st.selectbox("กรุณาเลือก RestingECG LVH = 1 Normal = 2 ST =3",[1,2,3])
-##A8 = st.number_input("กรุณาเลือกข้อมูล MaxHR 0 - 202")
-##A9 = st.selectbox("กรุณาเลือก ExerciseAngina Y = 1 N = 0",[0,1])
-##A10 = st.number_input("กรุณาเลือกข้อมูล Oldpeak -2.6 - 6.2")
-##A11= st.selectbox("กรุณาเลือก ST_Slope Down = 1 Flat = 2 UP = 3",[1,2,3])
+A1 = st.number_input("กรุณากรอกข้อมูล Temperature ")
+A2 = st.slider("กรุณาเลือกข้อมูล Humidity ",float(X[:,0].min()), float(X[:,0].max()), float(X[:,0].mean()))
+A3 = st.slider("กรุณาเลือกข้อมูล Weight ",-7.15,5.79)
+A4 = st.slider("กรุณาเลือกข้อมูล Sweetness ",-6.89,6.37)
+A5 = st.slider("กรุณาเลือกข้อมูล Crunchiness",-6.06,7.62)
+A6 = st.slider("กรุณาเลือกข้อมูล Juiciness",-5.96,7.36)
+A7 = st.slider("กรุณาเลือกข้อมูล Ripeness",-5.86,7.24)
+A8 = st.slider("กรุณาเลือกข้อมูล Acidity",-7.01,7.4)
+A9 = st.slider("กรุณาเลือกข้อมูล Acidity",-7.01,7.4)
 
-##if st.button("ทำนายผล"):
+if st.button("ทำนายผล"):
     #st.write("ทำนาย")
    ##dt = pd.read_csv("./data/heart02.csv") 
-   ##X = dt.drop('HeartDisease', axis=1)
-   ##y = dt.HeartDisease   
-
-  ## Knn_model = KNeighborsClassifier(n_neighbors=3)
-   ##Knn_model.fit(X, y)  
-    
-  ## x_input = np.array([[A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11]])
-   ##st.write(Knn_model.predict(x_input)
-   
-   ##out=Knn_model.predict(x_input)
+   X = dt.drop(columns=['AirQuality']) 
+   y = dt.AirQuality 
+   Knn_model = KNeighborsClassifier(n_neighbors=7)
+   Knn_model.fit(X, y)  
+   XIn= np.array([[A1,A2,A3,A4,A5,A6,A7,A8,A9]])
+   st.write(Knn_model.predict(XIn))
+   out=Knn_model.predict(XIn)
 
    ##if out[0] == 1 :
     ##st.image("./img/HeartDisease01.jpg")
