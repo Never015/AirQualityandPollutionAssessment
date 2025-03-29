@@ -6,15 +6,15 @@ import matplotlib.pyplot as plt
 
 st.title("🫀🫀🫀การพยากรณ์โรคหัวใจล้มเหลวด้วยเทคนิคเหมืองข้อมูล🫀🫀🫀")
 
-st.image('./img/Heart-Disease.jpg')
-st.subheader("🫀🫀🫀🫀HeartDisease🫀🫀🫀🫀🫀")
-c1,c2,c3=st.columns(3)
-with c1:
-    st.write("")
-with c2 :
-    st.image('./img/HeartDisease01.jpg')
-with c3 :
-    st.write("")
+##st.image('./img/Heart-Disease.jpg')
+##st.subheader("🫀🫀🫀🫀HeartDisease🫀🫀🫀🫀🫀")
+##c1,c2,c3=st.columns(3)
+##with c1:
+   ## st.write("")
+##with c2 :
+    ##st.image('./img/HeartDisease01.jpg')
+##with c3 :
+    ##st.write("")
 
 dt = pd.read_csv("./data/pollution.csv")
 st.header("🫀🫀🫀Data HeartDisease🫀🫀🫀")
