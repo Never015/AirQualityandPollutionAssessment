@@ -38,7 +38,7 @@ A5 = st.slider("กรุณาเลือกข้อมูล Crunchiness",-6
 A6 = st.slider("กรุณาเลือกข้อมูล Juiciness",-5.96,7.36)
 A7 = st.slider("กรุณาเลือกข้อมูล Ripeness",-5.86,7.24)
 A8 = st.slider("กรุณาเลือกข้อมูล Acidity",-7.01,7.4)
-A9 = st.slider("กรุณาเลือกข้อมูล ",0,7.4)
+A9 = st.slider("กรุณาเลือกข้อมูล ")
 
 if st.button("ทำนายผล"):
     #st.write("ทำนาย")
