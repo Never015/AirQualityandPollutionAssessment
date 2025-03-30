@@ -39,12 +39,12 @@ A6 = st.slider("กรุณาเลือกข้อมูล SO2",-6.2,44.9)
 A7 = st.slider("กรุณาเลือกข้อมูล CO",0.65,3.72)
 A8 = st.slider("กรุณาเลือกข้อมูล Proximity_to_Industrial_Areas",2.5,25.8)
 A9 = st.slider("กรุณาเลือกข้อมูล Population_Density",188,957)
-dt = pd.read_csv("./data/pollution01.csv")
-X = dt.drop(columns=['AirQuality']) 
-y = dt.AirQuality 
+
 if st.button("ทำนายผล"):
     #st.write("ทำนาย"S) 
-   
+   dt = pd.read_csv("./data/pollution01.csv")
+   X = dt.drop('AirQuality',axis=1)
+   y = dt.AirQuality 
    Knn_model = KNeighborsClassifier(n_neighbors=7)
    Knn_model.fit(X, y)  
    XIn= np.array([[A1,A2,A3,A4,A5,A6,A7,A8,A9]])
