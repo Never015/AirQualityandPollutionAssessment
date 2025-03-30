@@ -31,7 +31,7 @@ st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
 A1 = st.number_input("กรุณากรอกข้อมูล Temperature ",13.4,58.4)
-A2 = st.slider("กรุณาเลือกข้อมูล Humidity ",36,128.1)
+A2 = st.slider("กรุณาเลือกข้อมูล Humidity ",36.0,128.1)
 A3 = st.slider("กรุณาเลือกข้อมูล PM2.5 ",0,259)
 A4 = st.slider("กรุณาเลือกข้อมูล PM10 ",-0.2,315.8)
 A5 = st.slider("กรุณาเลือกข้อมูล NO2",7.4,64.9)
