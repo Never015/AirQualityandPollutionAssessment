@@ -48,12 +48,14 @@ if st.button("ทำนายผล"):
    Knn_model = KNeighborsClassifier(n_neighbors=7)
    Knn_model.fit(X, y)  
    XIn= np.array([[A1,A2,A3,A4,A5,A6,A7,A8,A9]])
-   st.write(Knn_model.predict(XIn))
+   ###st.write(Knn_model.predict(XIn))
    out=Knn_model.predict(XIn)
 
-   ##if out[0] == 1 :
-    ##st.image("./img/HeartDisease01.jpg")
-   ##else:
-    ##st.image("./img/HT.jpg")
-##else:
-    ##st.write("ไม่ทำนาย")
+   if out[0] == 0 :
+    st.write("Hazardous")
+   elif out[0] == 1 : 
+    st.write("Poor")
+   elif out[0] == 2 : 
+    st.write("Moderate")
+   else:
+     st.write("good")
