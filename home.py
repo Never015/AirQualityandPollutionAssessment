@@ -30,15 +30,15 @@ html_8 = """
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-A1 = st.number_input("กรุณากรอกข้อมูล Temperature ",13.4,58.4)
-A2 = st.slider("กรุณาเลือกข้อมูล Humidity ",36.0,128.1)
-A3 = st.slider("กรุณาเลือกข้อมูล PM2.5 ",0,259)
-A4 = st.slider("กรุณาเลือกข้อมูล PM10 ",-0.2,315.8)
-A5 = st.slider("กรุณาเลือกข้อมูล NO2",7.4,64.9)
-A6 = st.slider("กรุณาเลือกข้อมูล SO2",-6.2,44.9)
+A1 = st.number_input("กรุณากรอกข้อมูล Temperature ",13.40,58.40)
+A2 = st.slider("กรุณาเลือกข้อมูล Humidity ",36.00,128.10)
+A3 = st.slider("กรุณาเลือกข้อมูล PM2.5 ",0.00,259.0)
+A4 = st.slider("กรุณาเลือกข้อมูล PM10 ",-0.20,315.80)
+A5 = st.slider("กรุณาเลือกข้อมูล NO2",7.40,64.90)
+A6 = st.slider("กรุณาเลือกข้อมูล SO2",-6.20,44.90)
 A7 = st.slider("กรุณาเลือกข้อมูล CO",0.65,3.72)
-A8 = st.slider("กรุณาเลือกข้อมูล Proximity_to_Industrial_Areas",2.5,25.8)
-A9 = st.slider("กรุณาเลือกข้อมูล Population_Density",188,957)
+A8 = st.slider("กรุณาเลือกข้อมูล Proximity_to_Industrial_Areas",2.50,25.80)
+A9 = st.slider("กรุณาเลือกข้อมูล Population_Density",188.00,957.00)
 
 if st.button("ทำนายผล"):
     #st.write("ทำนาย"S) 
