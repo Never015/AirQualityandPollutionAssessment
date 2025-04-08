@@ -51,10 +51,10 @@ if st.button("ทำนายผล"):
    ###st.write(Knn_model.predict(XIn))
    out=Knn_model.predict(XIn)
    if out[0] == 0 :
-    st.write("Hazardous(อันตราย)")
+    st.write("คุณภาพอากาศ และ มลพิษ Hazardous(อันตราย)")
    elif out[0] == 1 : 
-    st.write("Poor(แย่)")
+    st.write("คุณภาพอากาศ และ มลพิษ Poor(แย่)")
    elif out[0] == 2 : 
-    st.write("Moderate(ปานกลาง)")
+    st.write("คุณภาพอากาศ และ มลพิษ Moderate(ปานกลาง)")
    else:
-     st.write("good(ดี)")
+     st.write("คุณภาพอากาศ และ มลพิษ good(ดี)")
