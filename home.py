@@ -49,12 +49,13 @@ if st.button("ทำนายผล"):
    Knn_model.fit(X, y)  
    XIn= np.array([[A1,A2,A3,A4,A5,A6,A7,A8,A9]])
    ###st.write(Knn_model.predict(XIn))
+   st.write("Air Quality and Pollution(คุณภาพอากาศและมลพิษ)")
    out=Knn_model.predict(XIn)
    if out[0] == 0 :
-    st.write("Hazardous")
+    st.write("Hazardous(อันตราย)")
    elif out[0] == 1 : 
-    st.write("Poor")
+    st.write("Poor(แย่)")
    elif out[0] == 2 : 
-    st.write("Moderate")
+    st.write("Moderate(ปานกลาง)")
    else:
-     st.write("good")
+     st.write("good(ดี)")
